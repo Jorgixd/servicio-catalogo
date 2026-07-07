@@ -28,3 +28,6 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN composer install --no-dev --optimize-autoloader --no-plugins --no-scripts
 
 EXPOSE 80
+
+
+CMD php artisan migrate --force && apache2-foreground
